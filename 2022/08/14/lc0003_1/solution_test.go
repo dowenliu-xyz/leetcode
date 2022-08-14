@@ -1,4 +1,4 @@
-package lc0003_1
+package main
 
 import "testing"
 

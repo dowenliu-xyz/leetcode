@@ -1,4 +1,4 @@
-package lc0003_1
+package main
 
 func lengthOfLongestSubstring(s string) int {
 	//return solution1(s)
