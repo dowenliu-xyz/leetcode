@@ -1,0 +1,26 @@
+package main
+
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	carry := 0
+	dummy := &ListNode{}
+	cur := dummy
+	for l1 != nil || l2 != nil {
+		val := carry
+		if l1 != nil {
+			val += l1.Val
+			l1 = l1.Next
+		}
+		if l2 != nil {
+			val += l2.Val
+			l2 = l2.Next
+		}
+		carry = val / 10
+		val %= 10
+		cur.Next = &ListNode{Val: val}
+		cur = cur.Next
+	}
+	if carry > 0 {
+		cur.Next = &ListNode{Val: carry}
+	}
+	return dummy.Next
+}
