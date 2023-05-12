@@ -7,6 +7,10 @@ import (
 
 func ReadIntSlice(line string) ([]int, error) {
 	line = trimSquareBrackets(line)
+	line = strings.TrimSpace(line)
+	if line == "" {
+		return nil, nil
+	}
 	numbers := strings.Split(line, ",")
 	intSlice := make([]int, 0, len(numbers))
 	for _, number := range numbers {
