@@ -1,6 +1,7 @@
 package inputs
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -31,4 +32,29 @@ func trimSquareBrackets(line string) string {
 		line = strings.TrimSpace(line)
 	}
 	return line
+}
+
+func ReadIntSquareInLine(input string) ([][]int, error) {
+	input = strings.TrimSpace(input)
+	input = strings.ReplaceAll(input, " ", "")
+	// [[1,2,3],[4,5,6],[7,8,9]]
+	if input == "" {
+		return nil, nil
+	}
+	if !strings.HasPrefix(input, "[[") || !strings.HasSuffix(input, "]]") {
+		return nil, fmt.Errorf("invalid input: %s", input)
+	}
+	input = input[2 : len(input)-2]
+	// 1,2,3],[4,5,6],[7,8,9
+	lines := strings.Split(input, "],[")
+	// 1,2,3 | 4,5,6 | 7,8,9
+	matrix := make([][]int, 0, len(lines))
+	for _, line := range lines {
+		intSlice, err := ReadIntSlice(line)
+		if err != nil {
+			return nil, err
+		}
+		matrix = append(matrix, intSlice)
+	}
+	return matrix, nil
 }
