@@ -38,7 +38,7 @@ func ReadIntSquareInLine(input string) ([][]int, error) {
 	input = strings.TrimSpace(input)
 	input = strings.ReplaceAll(input, " ", "")
 	// [[1,2,3],[4,5,6],[7,8,9]]
-	if input == "" {
+	if input == "" || input == "[]" {
 		return nil, nil
 	}
 	if !strings.HasPrefix(input, "[[") || !strings.HasSuffix(input, "]]") {
