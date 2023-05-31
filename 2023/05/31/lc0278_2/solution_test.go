@@ -1,4 +1,4 @@
-package lc0278
+package lc0278_2
 
 import (
 	"fmt"
