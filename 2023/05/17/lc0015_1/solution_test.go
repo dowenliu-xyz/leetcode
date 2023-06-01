@@ -33,7 +33,7 @@ func Test_threeSum(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			want, err := inputs.ReadIntSquareInLine(tt.want)
+			want, err := inputs.ReadIntMatrix(tt.want)
 			if err != nil {
 				t.Fatal(err)
 			}

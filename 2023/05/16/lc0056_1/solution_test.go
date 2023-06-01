@@ -29,7 +29,7 @@ func Test_merge(t *testing.T) {
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			intervals, err := inputs.ReadIntSquareInLine(tt.input)
+			intervals, err := inputs.ReadIntMatrix(tt.input)
 			if err != nil {
 				t.Fatal(err)
 			}

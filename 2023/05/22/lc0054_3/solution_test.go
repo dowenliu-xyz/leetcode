@@ -34,7 +34,7 @@ func Test_spiralOrder(t *testing.T) {
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			matrix, err := inputs.ReadIntSquareInLine(tt.input)
+			matrix, err := inputs.ReadIntMatrix(tt.input)
 			if err != nil {
 				t.Fatal(err)
 			}
