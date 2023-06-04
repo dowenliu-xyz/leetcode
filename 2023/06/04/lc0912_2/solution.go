@@ -29,11 +29,9 @@ func partition(rnd *rand.Rand, nums []int, l, r int) int {
 	nums[l], nums[tmp] = nums[tmp], nums[l]
 	pivot, lt, gt := nums[l], l+1, r
 	for {
-		for lt <= r && nums[lt] < pivot {
-			lt++
+		for ; lt <= gt && nums[lt] < pivot; lt++ {
 		}
-		for gt > l && nums[gt] > pivot {
-			gt--
+		for ; lt <= gt && nums[gt] > pivot; gt-- {
 		}
 		if lt >= gt {
 			break

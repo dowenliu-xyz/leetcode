@@ -1,4 +1,4 @@
-package lc0025_2
+package lc0025
 
 /**
  * Definition for singly-linked list.
