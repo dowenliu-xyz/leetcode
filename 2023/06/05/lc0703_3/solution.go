@@ -12,41 +12,43 @@ func Constructor(k int, nums []int) KthLargest {
 		heap[i] = math.MinInt
 	}
 	copy(heap, nums)
-	buildMinHeap(heap, k)
-	kl := KthLargest{heap: heap}
+	buildMinHeap(heap)
 	for i := k; i < len(nums); i++ {
-		kl.Add(nums[i])
+		if nums[i] > heap[0] {
+			heap[0] = nums[i]
+			minHeapify(heap, 0)
+		}
 	}
-	return kl
+	return KthLargest{heap: heap}
 }
 
 func (this *KthLargest) Add(val int) int {
 	if val > this.heap[0] {
 		this.heap[0] = val
-		minHeapify(this.heap, 0, len(this.heap))
+		minHeapify(this.heap, 0)
 	}
 	return this.heap[0]
 }
 
-func buildMinHeap(heap []int, size int) {
-	for i := size >> 1; i >= 0; i-- {
-		minHeapify(heap, i, size)
+func buildMinHeap(heap []int) {
+	for i := len(heap) >> 1; i >= 0; i-- {
+		minHeapify(heap, i)
 	}
 }
 
-func minHeapify(heap []int, i, size int) {
-	l, r, m := i<<1+1, i<<1+2, i
-	if l < size && heap[l] < heap[m] {
+func minHeapify(heap []int, i int) {
+	l, r, m, n := i<<1, i<<1+1, i, len(heap)
+	if l < n && heap[l] < heap[m] {
 		m = l
 	}
-	if r < size && heap[r] < heap[m] {
+	if r < n && heap[r] < heap[m] {
 		m = r
 	}
 	if m == i {
 		return
 	}
-	heap[m], heap[i] = heap[i], heap[m]
-	minHeapify(heap, m, size)
+	heap[i], heap[m] = heap[m], heap[i]
+	minHeapify(heap, m)
 }
 
 /**
