@@ -17,13 +17,27 @@ func solution1(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	ans, q := 0, []*TreeNode{root}
+	l, r := solution1(root.Left), solution1(root.Right)
+	return max(l, r) + 1
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func solution2(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	ans := 0
+	q := []*TreeNode{root}
 	for len(q) > 0 {
 		ans++
 		var p []*TreeNode
-		for len(q) > 0 {
-			node := q[0]
-			q = q[1:]
+		for _, node := range q {
 			if node.Left != nil {
 				p = append(p, node.Left)
 			}
@@ -34,19 +48,4 @@ func solution1(root *TreeNode) int {
 		q = p
 	}
 	return ans
-}
-
-func solution2(root *TreeNode) int {
-	if root == nil {
-		return 0
-	}
-	l, r := solution2(root.Left), solution2(root.Right)
-	return max(l, r) + 1
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
