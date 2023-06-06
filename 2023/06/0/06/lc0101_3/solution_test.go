@@ -22,6 +22,10 @@ func TestIsSymmetric(t *testing.T) {
 			want:  false,
 		},
 		{
+			input: `[1,2,3]`,
+			want:  false,
+		},
+		{
 			input: "[]",
 			want:  true,
 		},

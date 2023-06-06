@@ -1,4 +1,4 @@
-package lc0101_2
+package lc0101
 
 /**
  * Definition for a binary tree node.
