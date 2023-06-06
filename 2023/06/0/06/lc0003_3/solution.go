@@ -5,16 +5,23 @@ func lengthOfLongestSubstring(s string) int {
 	if n < 2 {
 		return n
 	}
-	ans, l, mem := 1, 0, make(map[byte]bool)
-	for r := 0; r < n; r++ {
-		for mem[s[r]] && l < r {
+	l, r, mem := 0, 0, map[byte]bool{}
+	ans := 1
+	for r < n {
+		for mem[s[r]] {
 			delete(mem, s[l])
 			l++
 		}
 		mem[s[r]] = true
-		if ans < r-l+1 {
-			ans = r - l + 1
-		}
+		r++
+		ans = max(ans, r-l)
 	}
 	return ans
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
