@@ -29,6 +29,10 @@ func TestIsBalance(t *testing.T) {
 			input: `[1,2,2,3,null,null,3,4,null,null,4]`,
 			want:  false,
 		},
+		{
+			input: `[1,2,3,4,5,6,null,8]`,
+			want:  true,
+		},
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {

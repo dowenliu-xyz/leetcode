@@ -9,14 +9,14 @@ package lc0110
  * }
  */
 func isBalanced(root *TreeNode) bool {
-	return balancedHeight(root) != -1
+	return height(root) != -1
 }
 
-func balancedHeight(root *TreeNode) int {
+func height(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	l, r := balancedHeight(root.Left), balancedHeight(root.Right)
+	l, r := height(root.Left), height(root.Right)
 	if l == -1 || r == -1 || abs(l-r) > 1 {
 		return -1
 	}
