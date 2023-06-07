@@ -9,16 +9,14 @@ package lc0278
  */
 
 func firstBadVersion(n int) int {
-	return binarySearch(1, n)
-}
-
-func binarySearch(l, r int) int {
-	m := l + (r-l)>>1
-	if isBadVersion(m) {
-		if m == 1 || !isBadVersion(m-1) {
-			return m
+	l, r := 1, n
+	for l <= r {
+		m := l + (r-l)>>1
+		if isBadVersion(m) {
+			r = m - 1
+		} else {
+			l = m + 1
 		}
-		return binarySearch(l, m-1)
 	}
-	return binarySearch(m+1, r)
+	return l
 }
