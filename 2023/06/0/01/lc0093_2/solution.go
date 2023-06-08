@@ -1,4 +1,4 @@
-package lc0093_2
+package lc0093
 
 import "strings"
 
