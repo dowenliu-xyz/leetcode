@@ -11,7 +11,7 @@ func search(nums []int, target int) int {
 		if nums[m] == target {
 			return m
 		}
-		if nums[l] <= nums[m] { // 注意 m 可能等于 l
+		if nums[l] <= nums[m] {
 			if nums[l] <= target && target < nums[m] {
 				r = m - 1
 			} else {
