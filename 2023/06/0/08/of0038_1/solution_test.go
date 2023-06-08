@@ -1,4 +1,4 @@
-package lc0038
+package of0038
 
 import (
 	"reflect"
