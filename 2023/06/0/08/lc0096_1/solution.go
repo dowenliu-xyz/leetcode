@@ -1,4 +1,4 @@
-package lc0091
+package lc0096
 
 func numTrees(n int) int {
 	G := make([]int, n+1)
