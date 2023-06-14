@@ -7,7 +7,7 @@ import (
 	"github.com/dowenliu-xyz/leetcode/internal/types"
 )
 
-func PrintSingleLinkedList(head *types.SingleLinkedListNode) string {
+func SprintSingleLinkedList(head *types.SingleLinkedListNode) string {
 	bu := strings.Builder{}
 	bu.WriteByte('[')
 	for head != nil {

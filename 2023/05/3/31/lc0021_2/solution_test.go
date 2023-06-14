@@ -43,7 +43,7 @@ func Test_mergeTwoLists(t *testing.T) {
 				t.Fatal(err)
 			}
 			got := mergeTwoLists(list1, list2)
-			if got := outputs.PrintSingleLinkedList(toInternal(got)); got != tt.want {
+			if got := outputs.SprintSingleLinkedList(toInternal(got)); got != tt.want {
 				t.Errorf("expect %s, got %s", tt.want, got)
 			}
 		})
