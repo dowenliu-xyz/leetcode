@@ -2,17 +2,17 @@ package inputs
 
 import "github.com/dowenliu-xyz/leetcode/internal/types"
 
-func IntSliceToSingleLinkedList(intSlice []int) *types.SingleLinkedListNode {
-	dummy := &types.SingleLinkedListNode{}
+func IntSliceToSingleLinkedList(intSlice []int) *types.ListNode {
+	dummy := &types.ListNode{}
 	cur := dummy
 	for _, v := range intSlice {
-		cur.Next = &types.SingleLinkedListNode{Val: v}
+		cur.Next = &types.ListNode{Val: v}
 		cur = cur.Next
 	}
 	return dummy.Next
 }
 
-func ReadIntSingleLinkedList(input string) (*types.SingleLinkedListNode, error) {
+func ReadLinkedList(input string) (*types.ListNode, error) {
 	ints, err := ReadIntSlice(input)
 	if err != nil {
 		return nil, err

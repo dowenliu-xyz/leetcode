@@ -47,7 +47,7 @@ func Test_mergeKLists(t *testing.T) {
 				}
 				got := mergeKLists(lists)
 				want := strings.ReplaceAll(tt.want, " ", "")
-				if got := outputs.SprintSingleLinkedList(toInternal(got)); got != want {
+				if got := outputs.SprintLinkedList(toInternal(got)); got != want {
 					t.Errorf("mergeKLists() = %v, want %v", got, want)
 				}
 			}()
@@ -74,7 +74,7 @@ func readInput(input string) ([]*ListNode, error) {
 	listStrs := strings.Split(input, "],[")
 	lists := make([]*ListNode, len(listStrs))
 	for _, listStr := range listStrs {
-		internalList, err := inputs.ReadIntSingleLinkedList(fmt.Sprintf("[%s]", listStr))
+		internalList, err := inputs.ReadLinkedList(fmt.Sprintf("[%s]", listStr))
 		if err != nil {
 			return nil, err
 		}
@@ -83,7 +83,7 @@ func readInput(input string) ([]*ListNode, error) {
 	return lists, nil
 }
 
-func fromInternal(internal *types.SingleLinkedListNode) *ListNode {
+func fromInternal(internal *types.ListNode) *ListNode {
 	dummy := &ListNode{}
 	cur := dummy
 	for internal != nil {
@@ -94,11 +94,11 @@ func fromInternal(internal *types.SingleLinkedListNode) *ListNode {
 	return dummy.Next
 }
 
-func toInternal(node *ListNode) *types.SingleLinkedListNode {
-	dummy := &types.SingleLinkedListNode{}
+func toInternal(node *ListNode) *types.ListNode {
+	dummy := &types.ListNode{}
 	cur := dummy
 	for node != nil {
-		cur.Next = &types.SingleLinkedListNode{Val: node.Val}
+		cur.Next = &types.ListNode{Val: node.Val}
 		cur = cur.Next
 		node = node.Next
 	}

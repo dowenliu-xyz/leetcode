@@ -33,14 +33,14 @@ func Test_reversePrint(t *testing.T) {
 }
 
 func readInput(input string) (*ListNode, error) {
-	head, err := inputs.ReadIntSingleLinkedList(input)
+	head, err := inputs.ReadLinkedList(input)
 	if err != nil {
 		return nil, err
 	}
 	return fromInternal(head), nil
 }
 
-func fromInternal(head *types.SingleLinkedListNode) *ListNode {
+func fromInternal(head *types.ListNode) *ListNode {
 	dummy := &ListNode{}
 	pre := dummy
 	for head != nil {

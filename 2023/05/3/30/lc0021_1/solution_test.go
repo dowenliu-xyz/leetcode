@@ -43,7 +43,7 @@ func Test_mergeTwoLists(t *testing.T) {
 				t.Fatal(err)
 			}
 			got := mergeTwoLists(list1, list2)
-			if got := outputs.SprintSingleLinkedList(toInternal(got)); got != tt.want {
+			if got := outputs.SprintLinkedList(toInternal(got)); got != tt.want {
 				t.Errorf("expect %s, got %s", tt.want, got)
 			}
 		})
@@ -55,18 +55,18 @@ func readInput(input string) (*ListNode, *ListNode, error) {
 	if len(lines) != 2 {
 		return nil, nil, fmt.Errorf("input should have 2 lines")
 	}
-	list1, err := inputs.ReadIntSingleLinkedList(lines[0])
+	list1, err := inputs.ReadLinkedList(lines[0])
 	if err != nil {
 		return nil, nil, err
 	}
-	list2, err := inputs.ReadIntSingleLinkedList(lines[1])
+	list2, err := inputs.ReadLinkedList(lines[1])
 	if err != nil {
 		return nil, nil, err
 	}
 	return fromInternal(list1), fromInternal(list2), nil
 }
 
-func fromInternal(node *types.SingleLinkedListNode) *ListNode {
+func fromInternal(node *types.ListNode) *ListNode {
 	if node == nil {
 		return nil
 	}
@@ -76,11 +76,11 @@ func fromInternal(node *types.SingleLinkedListNode) *ListNode {
 	}
 }
 
-func toInternal(node *ListNode) *types.SingleLinkedListNode {
+func toInternal(node *ListNode) *types.ListNode {
 	if node == nil {
 		return nil
 	}
-	return &types.SingleLinkedListNode{
+	return &types.ListNode{
 		Val:  node.Val,
 		Next: toInternal(node.Next),
 	}
