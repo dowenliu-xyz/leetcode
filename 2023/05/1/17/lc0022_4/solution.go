@@ -1,4 +1,4 @@
-package lc0022_4
+package lc0022
 
 func generateParenthesis(n int) []string {
 	var ans []string
