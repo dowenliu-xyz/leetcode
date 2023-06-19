@@ -1,7 +1,8 @@
 package of0009
 
 type CQueue struct {
-	input, output []int
+	input  []int
+	output []int
 }
 
 func Constructor() CQueue {
@@ -22,9 +23,9 @@ func (this *CQueue) DeleteHead() int {
 			this.input = this.input[:len(this.input)-1]
 		}
 	}
-	ans := this.output[len(this.output)-1]
+	value := this.output[len(this.output)-1]
 	this.output = this.output[:len(this.output)-1]
-	return ans
+	return value
 }
 
 /**
