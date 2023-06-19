@@ -1,4 +1,4 @@
-package lc0070_4
+package lc0070
 
 func climbStairs(n int) int {
 	//return solution1(n)
