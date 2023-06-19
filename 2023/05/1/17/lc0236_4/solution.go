@@ -1,4 +1,4 @@
-package lc0236_4
+package lc0236
 
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root == nil {
