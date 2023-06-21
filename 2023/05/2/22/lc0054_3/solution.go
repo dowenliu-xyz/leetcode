@@ -1,4 +1,4 @@
-package lc0054_3
+package lc0054
 
 func spiralOrder(matrix [][]int) []int {
 	//return solution1(matrix)
