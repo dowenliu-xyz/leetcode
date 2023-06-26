@@ -1,4 +1,4 @@
-package lc1480_3
+package lc1480
 
 func runningSum(nums []int) []int {
 	ans := make([]int, len(nums))
