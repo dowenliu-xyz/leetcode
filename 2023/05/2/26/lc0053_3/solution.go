@@ -1,4 +1,4 @@
-package lc0053_3
+package lc0053
 
 import "math"
 
