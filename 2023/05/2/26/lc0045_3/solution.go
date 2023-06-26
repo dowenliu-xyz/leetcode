@@ -1,4 +1,4 @@
-package lc0045_3
+package lc0045
 
 func jump(nums []int) int {
 	n := len(nums)
