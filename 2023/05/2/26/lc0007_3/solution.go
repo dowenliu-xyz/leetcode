@@ -1,4 +1,4 @@
-package lc0007_3
+package lc0007
 
 import "math"
 
