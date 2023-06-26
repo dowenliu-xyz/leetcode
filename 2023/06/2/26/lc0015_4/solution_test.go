@@ -26,6 +26,14 @@ func Test_threeSum(t *testing.T) {
 			input: `[0,0,0]`,
 			want:  `[[0,0,0]]`,
 		},
+		{
+			input: `[0,0,0,0]`,
+			want:  `[[0,0,0]]`,
+		},
+		{
+			input: `[-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0]`,
+			want:  `[[-5,1,4],[-4,0,4],[-4,1,3],[-2,-2,4],[-2,1,1],[0,0,0]]`,
+		},
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {

@@ -1,4 +1,4 @@
-package lc0015_3
+package lc0015
 
 import "sort"
 
