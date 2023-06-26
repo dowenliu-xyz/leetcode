@@ -1,4 +1,4 @@
-package lc0042_3
+package lc0042
 
 func trap(height []int) int {
 	//return solution1(height)
