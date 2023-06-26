@@ -1,4 +1,4 @@
-package lc0146_3
+package lc0146
 
 type linkedListNode struct {
 	key  int
