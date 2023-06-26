@@ -6,12 +6,12 @@ func findRepeatNumber(nums []int) int {
 }
 
 func solution1(nums []int) int {
-	seen := map[int]bool{}
+	mem := map[int]struct{}{}
 	for _, num := range nums {
-		if seen[num] {
+		if _, ok := mem[num]; ok {
 			return num
 		}
-		seen[num] = true
+		mem[num] = struct{}{}
 	}
 	return -1
 }
@@ -23,7 +23,7 @@ func solution2(nums []int) int {
 			i++
 			continue
 		}
-		if nums[i] == nums[nums[i]] {
+		if nums[nums[i]] == nums[i] {
 			return nums[i]
 		}
 		nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
