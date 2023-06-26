@@ -1,4 +1,4 @@
-package lc0055_3
+package lc0055
 
 func canJump(nums []int) bool {
 	reachable := 0
