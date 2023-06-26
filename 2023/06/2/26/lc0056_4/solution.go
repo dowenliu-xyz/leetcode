@@ -10,9 +10,9 @@ func merge(intervals [][]int) [][]int {
 	for _, interval := range intervals {
 		if len(ans) > 0 && ans[len(ans)-1][1] >= interval[0] {
 			ans[len(ans)-1][1] = max(ans[len(ans)-1][1], interval[1])
-			continue
+		} else {
+			ans = append(ans, interval)
 		}
-		ans = append(ans, interval)
 	}
 	return ans
 }
