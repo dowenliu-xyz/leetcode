@@ -1,4 +1,4 @@
-package lc0322_3
+package lc0322
 
 import "math"
 
