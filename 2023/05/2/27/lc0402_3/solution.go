@@ -1,4 +1,4 @@
-package lc0402_3
+package lc0402
 
 func removeKdigits(num string, k int) string {
 	var stack []byte
