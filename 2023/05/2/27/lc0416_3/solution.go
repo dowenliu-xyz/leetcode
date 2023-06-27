@@ -1,4 +1,4 @@
-package lc0416_3
+package lc0416
 
 func canPartition(nums []int) bool {
 	n := len(nums)
