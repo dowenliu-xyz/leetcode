@@ -1,4 +1,4 @@
-package lc0051_3
+package lc0051
 
 import "math/bits"
 
