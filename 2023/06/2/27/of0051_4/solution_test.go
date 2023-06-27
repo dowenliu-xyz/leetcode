@@ -20,6 +20,10 @@ func TestReversePairs(t *testing.T) {
 			input: `[1,2,1,2,1]`,
 			want:  3,
 		},
+		{
+			input: `[5,4,3,2,1]`,
+			want:  10,
+		},
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
