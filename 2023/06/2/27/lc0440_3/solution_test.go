@@ -14,6 +14,7 @@ func Test_findKthNumber(t *testing.T) {
 		{13, 2, 10},
 		{13, 3, 11},
 		{1, 1, 1},
+		{10, 3, 2},
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
