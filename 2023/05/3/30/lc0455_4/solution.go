@@ -1,4 +1,4 @@
-package lc0455_4
+package lc0455
 
 import "sort"
 
