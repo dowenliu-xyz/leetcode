@@ -1,4 +1,4 @@
-package lc0215_3
+package lc0215
 
 import (
 	"math/rand"
