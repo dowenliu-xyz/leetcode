@@ -1,4 +1,4 @@
-package lc0200_3
+package lc0200
 
 func numIslands(grid [][]byte) int {
 	//return solution1(grid)
