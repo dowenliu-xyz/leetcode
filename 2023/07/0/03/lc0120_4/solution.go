@@ -1,4 +1,4 @@
-package lc0120_3
+package lc0120
 
 import "math"
 
@@ -12,7 +12,7 @@ func minimumTotal(triangle [][]int) int {
 	for i := 1; i < n; i++ {
 		dp[i] = dp[i-1] + triangle[i][i]
 		for j := i - 1; j > 0; j-- {
-			dp[j] = triangle[i][j] + min(dp[j], dp[j-1])
+			dp[j] = min(dp[j], dp[j-1]) + triangle[i][j]
 		}
 		dp[0] += triangle[i][0]
 	}

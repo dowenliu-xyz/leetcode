@@ -1,4 +1,4 @@
-package lc0120_3
+package lc0120
 
 import (
 	"fmt"
