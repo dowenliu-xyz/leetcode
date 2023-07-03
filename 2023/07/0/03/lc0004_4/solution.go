@@ -22,12 +22,12 @@ func findKthElement(nums1, nums2 []int, k int) int {
 			return min(nums1[offset1], nums2[offset2])
 		}
 		half := k >> 1
-		newOffset1, newOffset2 := min(offset1+half-1, len(nums1)-1), min(offset2+half-1, len(nums2)-1)
-		if nums1[newOffset1] < nums2[newOffset2] {
-			k -= newOffset1 - offset1 + 1
+		newOffset1, newOffset2 := min(len(nums1), offset1+half)-1, min(len(nums2), offset2+half)-1
+		if nums1[newOffset1] <= nums2[newOffset2] {
+			k -= newOffset1 + 1 - offset1
 			offset1 = newOffset1 + 1
 		} else {
-			k -= newOffset2 - offset2 + 1
+			k -= newOffset2 + 1 - offset2
 			offset2 = newOffset2 + 1
 		}
 	}
