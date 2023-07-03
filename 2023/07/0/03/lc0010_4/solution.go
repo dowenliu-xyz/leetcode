@@ -2,14 +2,15 @@ package lc0010
 
 func isMatch(s string, p string) bool {
 	m, n := len(s), len(p)
+	// dp[i][j] 表示 s[:i] 能否被 p[:j] 匹配
 	dp := make([][]bool, m+1)
 	for i := range dp {
 		dp[i] = make([]bool, n+1)
 	}
 	dp[0][0] = true
-	for i := 2; i <= n; i++ {
+	for i := 1; i <= n; i++ {
 		if p[i-1] == '*' {
-			dp[0][i] = dp[0][i] || dp[0][i-2]
+			dp[0][i] = dp[0][i-2]
 		}
 	}
 	for i := 1; i <= m; i++ {
