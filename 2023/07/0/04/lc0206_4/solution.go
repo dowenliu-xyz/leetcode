@@ -8,9 +8,9 @@ package lc0206
  * }
  */
 func reverseList(head *ListNode) *ListNode {
-	pre, cur := (*ListNode)(nil), head
-	for cur != nil {
-		pre, cur.Next, cur = cur, pre, cur.Next
+	var pre *ListNode
+	for head != nil {
+		head.Next, head, pre = pre, head.Next, head
 	}
 	return pre
 }
