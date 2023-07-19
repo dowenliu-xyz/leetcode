@@ -19,9 +19,10 @@ func Test_constructFromPrePost(t *testing.T) {
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			got := constructFromPrePost(tt.preorder, tt.postorder)
-			if !match(outputs.LevelOrderString(got), tt.want) {
-				t.Errorf("constructFromPrePost(%v, %v) = %v, want %v", tt.preorder, tt.postorder, outputs.LevelOrderString(got), tt.want)
+			root := constructFromPrePost(tt.preorder, tt.postorder)
+			got := outputs.LevelOrderString(root)
+			if !match(got, tt.want) {
+				t.Errorf("constructFromPrePost(%v, %v) = %v, want %v", tt.preorder, tt.postorder, got, tt.want)
 			}
 		})
 	}
